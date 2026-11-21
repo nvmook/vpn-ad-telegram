@@ -5,7 +5,7 @@ const API_ID = 2040;
 const API_HASH = "b18441a1ff607e10a989891a5462e627";
 
 const PHRASES = [
-  "тест."
+  "😈 B𐌿H\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿"
 ];
 
 const seenAlbums = new Set();
