@@ -1,8 +1,8 @@
 const { TelegramClient, Api } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const API_ID = 2040;
-const API_HASH = "b18441a1ff607e10a989891a5462e627";
+const API_ID = 6;
+const API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e";
 
 const PHRASES = [
   "😈 B𐌿H\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿"
@@ -30,7 +30,7 @@ const dedupAlbums = (list) => {
 
 module.exports = async (req, res) => {
   const target = (process.env.TARGET_CHAT || "").replace("@", "").trim().toLowerCase();
-  const session = (process.env.SESSION_STRING || "").trim();
+  const session = (process.env.SESSION_STRING || "").replace(/\s+/g, "");
 
   if (!target || !session) {
     return res.status(500).send("Missing TARGET_CHAT or SESSION_STRING");
@@ -38,9 +38,9 @@ module.exports = async (req, res) => {
 
   const client = new TelegramClient(new StringSession(session), API_ID, API_HASH, {
     connectionRetries: 2,
-    deviceModel: "Desktop",
-    systemVersion: "Windows 10",
-    appVersion: "4.16.8 x64",
+    deviceModel: "Samsung Galaxy S23",
+    systemVersion: "SDK 34",
+    appVersion: "11.5.0",
   });
   client.setLogLevel("error");
 
