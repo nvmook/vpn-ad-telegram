@@ -1,8 +1,7 @@
 {
   "functions": {
-    "api/webhook.js": {
+    "api/cron.js": {
       "maxDuration": 30
     }
   }
 }
-
