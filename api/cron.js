@@ -1,8 +1,8 @@
 const { TelegramClient, Api } = require("telegram");
 const { StringSession } = require("telegram/sessions");
 
-const API_ID = 6;
-const API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e";
+const API_ID = Number(process.env.API_ID) || 6;
+const API_HASH = process.env.API_HASH || "eb06d4abfb49dc3eeb1aeb98ae0f581e";
 
 const PHRASES = [
   "😈 B𐌿H\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿\n\n🌐B П𝘖ИСK в Теⲗⲗⲉгее :   сlеаrа𐌿се_vр𐌿"
@@ -38,9 +38,11 @@ module.exports = async (req, res) => {
 
   const client = new TelegramClient(new StringSession(session), API_ID, API_HASH, {
     connectionRetries: 2,
-    deviceModel: "Samsung Galaxy S23",
+    deviceModel: "Redmi Redmi A3",
     systemVersion: "SDK 34",
     appVersion: "11.5.0",
+    langCode: "en",
+    systemLangCode: "en-US",
   });
   client.setLogLevel("error");
 
